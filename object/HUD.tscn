@@ -1,0 +1,121 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://script/HUD.gd" type="Script" id=1]
+[ext_resource path="res://sprites/life/life10.png" type="Texture" id=2]
+[ext_resource path="res://sprites/life/life09.png" type="Texture" id=3]
+[ext_resource path="res://sprites/life/life08.png" type="Texture" id=4]
+[ext_resource path="res://sprites/life/life03.png" type="Texture" id=5]
+[ext_resource path="res://sprites/life/life00.png" type="Texture" id=6]
+[ext_resource path="res://sprites/life/life06.png" type="Texture" id=7]
+[ext_resource path="res://sprites/life/life04.png" type="Texture" id=8]
+[ext_resource path="res://sprites/life/life07.png" type="Texture" id=9]
+[ext_resource path="res://sprites/life/life05.png" type="Texture" id=10]
+[ext_resource path="res://sprites/life/life01.png" type="Texture" id=11]
+[ext_resource path="res://sprites/life/life02.png" type="Texture" id=12]
+[ext_resource path="res://sprites/object/chave.png" type="Texture" id=13]
+[ext_resource path="res://sprites/object/x.png" type="Texture" id=14]
+[ext_resource path="res://sprites/object/1.png" type="Texture" id=15]
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "10",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "09",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "08",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "03",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "00",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "06",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "04",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "07",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "05",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ) ],
+"loop": true,
+"name": "01",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "02",
+"speed": 5.0
+} ]
+
+[node name="HUD" type="CanvasLayer" index="0"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="HP" type="AnimatedSprite" parent="." index="0" groups=[
+"hp",
+]]
+
+position = Vector2( 10, 10 )
+scale = Vector2( 3.87097, 3.87097 )
+frames = SubResource( 1 )
+animation = "10"
+centered = false
+
+[node name="Key" type="Sprite" parent="." index="1"]
+
+position = Vector2( 10, 50 )
+scale = Vector2( 4.28571, 4.28571 )
+texture = ExtResource( 13 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="X" type="Sprite" parent="." index="2"]
+
+position = Vector2( 80, 50 )
+scale = Vector2( 4.28571, 4.28571 )
+texture = ExtResource( 14 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+[node name="Num" type="Sprite" parent="." index="3"]
+
+position = Vector2( 120, 50 )
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 15 )
+centered = false
+_sections_unfolded = [ "Offset" ]
+
+
