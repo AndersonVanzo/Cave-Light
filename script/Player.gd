@@ -13,26 +13,27 @@ func _ready():
 	lifebar = get_tree().get_nodes_in_group("hp")[0]
 
 func lifebar_refresh():
-	if life == 10:
-		lifebar.play("10")
-	elif life == 9:
-		lifebar.play("09")
-	elif life == 8:
-		lifebar.play("08")
-	elif life == 7:
-		lifebar.play("07")
-	elif life == 6:
-		lifebar.play("06")
-	elif life == 5:
-		lifebar.play("05")
-	elif life == 4:
-		lifebar.play("04")
-	elif life == 3:
-		lifebar.play("03")
-	elif life == 2:
-		lifebar.play("02")
-	elif life == 1:
-		lifebar.play("01")
+	match life:
+		10:
+			lifebar.play("10")
+		9:
+			lifebar.play("09")
+		8:
+			lifebar.play("08")
+		7:
+			lifebar.play("07")
+		6:
+			lifebar.play("06")
+		5:
+			lifebar.play("05")
+		4:
+			lifebar.play("04")
+		3:
+			lifebar.play("03")
+		2:
+			lifebar.play("02")
+		1:
+			lifebar.play("01")
 
 # movimento
 func _physics_process(delta):
@@ -68,3 +69,7 @@ func _physics_process(delta):
 func _on_pes_body_entered(body):
 	life = life - 1
 	$".".position = Vector2(5,0)
+
+func _on_abrir_area_entered(area):
+	if Input.is_action_pressed("ui_enter"):
+		get_tree().change_scene("res://scenes/MainMenu.tscn")

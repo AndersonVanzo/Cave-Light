@@ -3,8 +3,8 @@
 [ext_resource path="res://sprites/background/level1.png" type="Texture" id=1]
 [ext_resource path="res://object/MorteEspinhos.tscn" type="PackedScene" id=2]
 [ext_resource path="res://object/Porta.tscn" type="PackedScene" id=3]
-[ext_resource path="res://object/Abrir bau.tscn" type="PackedScene" id=4]
-[ext_resource path="res://object/HUD.tscn" type="PackedScene" id=5]
+[ext_resource path="res://object/HUD.tscn" type="PackedScene" id=4]
+[ext_resource path="res://object/Bau.tscn" type="PackedScene" id=5]
 [ext_resource path="res://object/Player.tscn" type="PackedScene" id=6]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,12 +16,11 @@ extents = Vector2( 10, 10 )
 
 [node name="Background" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
 position = Vector2( 200, 120 )
 
 [node name="Sprite" type="Sprite" parent="Background" index="0"]
 
-position = Vector2( -200, -120.814 )
+position = Vector2( -199.949, -120.063 )
 scale = Vector2( 3.775, 3.775 )
 texture = ExtResource( 1 )
 centered = false
@@ -29,13 +28,11 @@ _sections_unfolded = [ "Offset", "Transform" ]
 
 [node name="Ground" type="Node" parent="." index="1"]
 
-editor/display_folded = true
-
 [node name="Ground1" type="StaticBody2D" parent="Ground" index="0"]
 
 editor/display_folded = true
-position = Vector2( 249, 760 )
-scale = Vector2( 7.84375, 1 )
+position = Vector2( 250, 755.779 )
+scale = Vector2( 7.84375, 1.00689 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -254,8 +251,8 @@ shape = SubResource( 1 )
 [node name="Ground2" type="StaticBody2D" parent="Ground" index="10"]
 
 editor/display_folded = true
-position = Vector2( 769.5, 760 )
-scale = Vector2( 4.70313, 1 )
+position = Vector2( 769.5, 757.784 )
+scale = Vector2( 4.70313, 1.06925 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -276,8 +273,8 @@ shape = SubResource( 1 )
 [node name="Ground3" type="StaticBody2D" parent="Ground" index="11"]
 
 editor/display_folded = true
-position = Vector2( 1068, 671.397 )
-scale = Vector2( 4.77166, 1.82528 )
+position = Vector2( 1068, 669.546 )
+scale = Vector2( 4.77166, 1.88313 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -298,8 +295,8 @@ shape = SubResource( 1 )
 [node name="Ground4" type="StaticBody2D" parent="Ground" index="12"]
 
 editor/display_folded = true
-position = Vector2( 1368.05, 560.021 )
-scale = Vector2( 4.88202, 1.80166 )
+position = Vector2( 1368.05, 558.805 )
+scale = Vector2( 4.88202, 1.83967 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -327,12 +324,11 @@ scale = Vector2( 2.246, 1 )
 position = Vector2( 1460, 416.186 )
 scale = Vector2( 2.66875, 2.66875 )
 
-[node name="Abrir bau" parent="." index="4" instance=ExtResource( 4 )]
+[node name="HUD" parent="." index="4" instance=ExtResource( 4 )]
 
-position = Vector2( 1477.09, 392.802 )
-collision_layer = 2
+[node name="Bau" parent="." index="5" instance=ExtResource( 5 )]
 
-[node name="HUD" parent="." index="5" instance=ExtResource( 5 )]
+position = Vector2( 1040.19, 581.559 )
 
 [node name="Player" parent="." index="6" instance=ExtResource( 6 )]
 

@@ -1,18 +1,15 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://script/Player.gd" type="Script" id=1]
-[ext_resource path="res://sprites/player/stand/player_stand1.png" type="Texture" id=2]
-[ext_resource path="res://sprites/player/stand/player_stand2.png" type="Texture" id=3]
-[ext_resource path="res://sprites/player/run/player_run1.png" type="Texture" id=4]
-[ext_resource path="res://sprites/player/run/player_run2.png" type="Texture" id=5]
-[ext_resource path="res://sprites/player/run/player_run3.png" type="Texture" id=6]
-[ext_resource path="res://sprites/player/run/player_run4.png" type="Texture" id=7]
-[ext_resource path="res://sprites/player/run/player_run5.png" type="Texture" id=8]
-[ext_resource path="res://sprites/player/run/player_run6.png" type="Texture" id=9]
-[ext_resource path="res://sprites/player/jump/player_jump1.png" type="Texture" id=10]
-[ext_resource path="res://sprites/player/jump/player_jump2.png" type="Texture" id=11]
-[ext_resource path="res://sprites/player/jump/player_jump3.png" type="Texture" id=12]
-[ext_resource path="res://sprites/player/jump/player_jump4.png" type="Texture" id=13]
+[ext_resource path="res://sprites/player/darker1/run/player_run1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player/darker1/run/player_run2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/player/darker1/run/player_run3.png" type="Texture" id=4]
+[ext_resource path="res://sprites/player/darker1/run/player_run5.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/darker1/run/player_run4.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/darker1/run/player_run6.png" type="Texture" id=7]
+[ext_resource path="res://sprites/player/darker1/stand/player_stand1.png" type="Texture" id=8]
+[ext_resource path="res://sprites/player/darker1/stand/player_stand2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/player/darker1/jump/player_jump1.png" type="Texture" id=10]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,17 +19,17 @@ extents = Vector2( 10, 10 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
-"loop": true,
-"name": "stand",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "run",
 "speed": 7.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": true,
+"name": "stand",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "jump",
 "speed": 5.0
@@ -42,6 +39,11 @@ animations = [ {
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 50.5278 )
+
+[sub_resource type="RectangleShape2D" id=4]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
 
 [node name="Player" type="Node2D" index="0" groups=[
 "player",
@@ -64,6 +66,7 @@ life = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D" index="0"]
 
+visible = false
 light_mask = 2
 position = Vector2( -0.0698767, 0.0015074 )
 scale = Vector2( 1.63963, 3.16472 )
@@ -76,6 +79,7 @@ light_mask = 2
 scale = Vector2( 2.11189, 2.11189 )
 frames = SubResource( 2 )
 animation = "stand"
+frame = 1
 playing = true
 _sections_unfolded = [ "Transform", "Visibility", "Z Index" ]
 
@@ -107,6 +111,7 @@ _sections_unfolded = [ "Limit" ]
 
 [node name="pes" type="Area2D" parent="KinematicBody2D" index="3"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -125,6 +130,32 @@ scale = Vector2( 1.38261, 0.0207396 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
+[node name="abrir" type="Area2D" parent="KinematicBody2D" index="4"]
+
+position = Vector2( 0.445525, 1 )
+scale = Vector2( 0.499412, 0.96875 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 8
+collision_mask = 8
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/abrir" index="0"]
+
+position = Vector2( 9.53674e-007, 2.93438e-006 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 4 )
+
 [connection signal="body_entered" from="KinematicBody2D/pes" to="KinematicBody2D" method="_on_pes_body_entered"]
+
+[connection signal="area_entered" from="KinematicBody2D/abrir" to="KinematicBody2D" method="_on_abrir_area_entered"]
 
 
