@@ -8,6 +8,8 @@ var motion = Vector2()
 export var life_max = 10
 export var life = 10
 var lifebar
+var abrirBau = false
+var abrirPorta = false
 
 func _ready():
 	lifebar = get_tree().get_nodes_in_group("hp")[0]
@@ -65,11 +67,23 @@ func _physics_process(delta):
 
 	motion = move_and_slide(motion, UP)
 	
+	# Abrir coisas
+	if Input.is_action_pressed("ui_enter"):
+		if abrirBau == true:
+			get_tree().change_scene("res://scenes/perguntas/Pergunta1.tscn")
+		elif abrirPorta == true:
+			get_tree().change_scene("res://scenes/FimProvisorio.tscn")
+	
 # morte
 func _on_pes_body_entered(body):
 	life = life - 1
 	$".".position = Vector2(5,0)
 
-func _on_abrir_area_entered(area):
-	if Input.is_action_pressed("ui_enter"):
-		get_tree().change_scene("res://scenes/MainMenu.tscn")
+func _on_abrir_body_entered(body):
+	abrirBau = true
+func _on_abrirBau_body_exited(body):
+	abrirBau = false
+func _on_abrirPorta_body_entered(body):
+	abrirPorta = true
+func _on_abrirPorta_body_exited(body):
+	abrirPorta = false

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://script/Tutorial1.gd" type="Script" id=1]
 [ext_resource path="res://sprites/tutorial/img2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/object/continuar.png" type="Texture" id=3]
 
 [node name="Tutorial1" type="Control" index="0"]
 
@@ -34,13 +35,13 @@ expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Offset" ]
 
-[node name="Button" type="Button" parent="." index="1"]
+[node name="Button" type="TextureButton" parent="." index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 850.0
+margin_left = 820.0
 margin_top = 430.0
 margin_right = 940.0
 margin_bottom = 460.0
@@ -55,9 +56,8 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Continuar"
-flat = false
-align = 1
+texture_normal = ExtResource( 3 )
+expand = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://script/Player.gd" type="Script" id=1]
 [ext_resource path="res://sprites/player/darker1/run/player_run1.png" type="Texture" id=2]
@@ -45,6 +45,11 @@ extents = Vector2( 10, 50.5278 )
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
+[sub_resource type="RectangleShape2D" id=5]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
 [node name="Player" type="Node2D" index="0" groups=[
 "player",
 ]]
@@ -56,8 +61,8 @@ _sections_unfolded = [ "Visibility" ]
 
 light_mask = 2
 input_pickable = false
-collision_layer = 3
-collision_mask = 3
+collision_layer = 1
+collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Visibility", "collision" ]
@@ -117,8 +122,8 @@ gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
 linear_damp = 0.1
 angular_damp = 1.0
-collision_layer = 4
-collision_mask = 4
+collision_layer = 2
+collision_mask = 2
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
@@ -130,10 +135,32 @@ scale = Vector2( 1.38261, 0.0207396 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="abrir" type="Area2D" parent="KinematicBody2D" index="4"]
+[node name="abrirBau" type="Area2D" parent="KinematicBody2D" index="4"]
 
 position = Vector2( 0.445525, 1 )
 scale = Vector2( 0.499412, 0.96875 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 16
+collision_mask = 16
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/abrirBau" index="0"]
+
+position = Vector2( 9.53674e-007, 2.93438e-006 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 4 )
+
+[node name="abrirPorta" type="Area2D" parent="KinematicBody2D" index="5"]
+
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -144,18 +171,22 @@ collision_mask = 8
 audio_bus_override = false
 audio_bus_name = "Master"
 _sections_unfolded = [ "Collision" ]
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/abrir" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KinematicBody2D/abrirPorta" index="0"]
 
-position = Vector2( 9.53674e-007, 2.93438e-006 )
-scale = Vector2( 3.07692, 3.07692 )
-shape = SubResource( 4 )
+position = Vector2( 1.75, 1.75 )
+scale = Vector2( 1.40385, 2.94231 )
+shape = SubResource( 5 )
+_sections_unfolded = [ "Transform" ]
 
 [connection signal="body_entered" from="KinematicBody2D/pes" to="KinematicBody2D" method="_on_pes_body_entered"]
 
-[connection signal="area_entered" from="KinematicBody2D/abrir" to="KinematicBody2D" method="_on_abrir_area_entered"]
+[connection signal="body_entered" from="KinematicBody2D/abrirBau" to="KinematicBody2D" method="_on_abrir_body_entered"]
+
+[connection signal="body_exited" from="KinematicBody2D/abrirBau" to="KinematicBody2D" method="_on_abrirBau_body_exited"]
+
+[connection signal="body_entered" from="KinematicBody2D/abrirPorta" to="KinematicBody2D" method="_on_abrirPorta_body_entered"]
+
+[connection signal="body_exited" from="KinematicBody2D/abrirPorta" to="KinematicBody2D" method="_on_abrirPorta_body_exited"]
 
 
