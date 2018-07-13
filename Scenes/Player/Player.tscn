@@ -1,0 +1,117 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Script/Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://sprites/player/darker1/stand/player_stand1.png" type="Texture" id=2]
+[ext_resource path="res://sprites/player/darker1/stand/player_stand2.png" type="Texture" id=3]
+[ext_resource path="res://sprites/player/darker1/run/player_run1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/player/darker1/run/player_run2.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/darker1/run/player_run3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/darker1/jump/player_jump1.png" type="Texture" id=7]
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
+"loop": true,
+"name": "Stand_darker1",
+"speed": 1.5
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Run_darker1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "Jump_darker1",
+"speed": 5.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="Player" type="KinematicBody2D" index="0"]
+
+input_pickable = false
+collision_layer = 27
+collision_mask = 27
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision" ]
+life_max = 10
+life = 10
+
+[node name="Collision" type="CollisionShape2D" parent="." index="0"]
+
+position = Vector2( 0.524631, 0.107508 )
+scale = Vector2( 1.09146, 2.98872 )
+shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="1"]
+
+position = Vector2( -0.0852566, 0 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = 0
+limit_top = 0
+limit_right = 1510
+limit_bottom = 905
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Limit" ]
+
+[node name="Sprite" type="AnimatedSprite" parent="." index="2"]
+
+position = Vector2( -0.500001, 0 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 1 )
+animation = "Stand_darker1"
+playing = true
+
+[node name="Pes" type="Area2D" parent="." index="3"]
+
+editor/display_folded = true
+position = Vector2( 0, 30 )
+scale = Vector2( 0.40625, 0.03125 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 4
+collision_mask = 4
+audio_bus_override = false
+audio_bus_name = "Master"
+_sections_unfolded = [ "Collision" ]
+
+[node name="Collision" type="CollisionShape2D" parent="Pes" index="0"]
+
+position = Vector2( 1.90735e-006, 4.76837e-007 )
+scale = Vector2( 3.07692, 3.07692 )
+shape = SubResource( 3 )
+
+[connection signal="body_entered" from="Pes" to="." method="_on_Pes_body_entered"]
+
+

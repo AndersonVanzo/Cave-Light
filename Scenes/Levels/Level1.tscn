@@ -1,0 +1,258 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://sprites/background/level1.png" type="Texture" id=1]
+[ext_resource path="res://Scenes/Others/Ground.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Others/Spikes.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Others/Porta.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Others/Bau.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Player/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Others/HUD.tscn" type="PackedScene" id=7]
+
+[node name="Level1" type="Node" index="0"]
+
+[node name="Background" type="Sprite" parent="." index="0"]
+
+scale = Vector2( 3.775, 3.775 )
+texture = ExtResource( 1 )
+centered = false
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="Node" parent="." index="1"]
+
+[node name="Ground1" parent="Ground" index="0" instance=ExtResource( 2 )]
+
+position = Vector2( 241.095, 756.902 )
+scale = Vector2( 7.84902, 1.04431 )
+
+[node name="Ground6" parent="Ground" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( -20, 556.899 )
+scale = Vector2( 0.553909, 2.37094 )
+
+[node name="Ground9" parent="Ground" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 15.6923, 720.886 )
+scale = Vector2( 0.478669, 0.122922 )
+
+[node name="Ground10" parent="Ground" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 13.9215, 715.261 )
+scale = Vector2( 0.405971, 0.0491382 )
+
+[node name="Ground11" parent="Ground" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 10.0605, 711.694 )
+scale = Vector2( 0.405971, 0.0629336 )
+
+[node name="Ground12" parent="Ground" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 10.0119, 698.257 )
+scale = Vector2( 0.288136, 0.356979 )
+
+[node name="Ground16" parent="Ground" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 490.643, 755.133 )
+scale = Vector2( 0.237746, 0.356863 )
+
+[node name="Ground20" parent="Ground" index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 628.674, 747.328 )
+scale = Vector2( 0.168236, 0.226048 )
+
+[node name="Ground23" parent="Ground" index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 896.509, 723.116 )
+scale = Vector2( 0.168236, 0.0596422 )
+
+[node name="Ground24" parent="Ground" index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 907.62, 719.366 )
+scale = Vector2( 0.168236, 0.0596422 )
+
+[node name="Ground25" parent="Ground" index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 911.509, 715.338 )
+scale = Vector2( 0.168236, 0.0596422 )
+
+[node name="Ground26" parent="Ground" index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 915.398, 711.63 )
+scale = Vector2( 0.168236, 0.0596422 )
+
+[node name="Ground29" parent="Ground" index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 925.966, 626.888 )
+scale = Vector2( 0.154191, 0.123126 )
+
+[node name="Ground30" parent="Ground" index="13" instance=ExtResource( 2 )]
+
+position = Vector2( 928.482, 621.026 )
+scale = Vector2( 0.111964, 0.0581595 )
+
+[node name="Ground31" parent="Ground" index="14" instance=ExtResource( 2 )]
+
+position = Vector2( 930.686, 617.263 )
+scale = Vector2( 0.0625902, 0.0588083 )
+
+[node name="Ground27" parent="Ground" index="15" instance=ExtResource( 2 )]
+
+position = Vector2( 918.097, 703.951 )
+scale = Vector2( 0.139735, 0.176862 )
+
+[node name="Ground32" parent="Ground" index="16" instance=ExtResource( 2 )]
+
+position = Vector2( 1197.41, 609.628 )
+scale = Vector2( 0.144172, 0.0561011 )
+
+[node name="Ground33" parent="Ground" index="17" instance=ExtResource( 2 )]
+
+position = Vector2( 1201.21, 605.769 )
+scale = Vector2( 0.144172, 0.0561011 )
+
+[node name="Ground34" parent="Ground" index="18" instance=ExtResource( 2 )]
+
+position = Vector2( 1208.16, 602.035 )
+scale = Vector2( 0.127963, 0.0561011 )
+
+[node name="Ground35" parent="Ground" index="19" instance=ExtResource( 2 )]
+
+position = Vector2( 1209.96, 596.483 )
+scale = Vector2( 0.0649013, 0.119116 )
+
+[node name="Ground37" parent="Ground" index="20" instance=ExtResource( 2 )]
+
+position = Vector2( 1219.17, 519.148 )
+scale = Vector2( 0.111561, 0.0621596 )
+
+[node name="Ground38" parent="Ground" index="21" instance=ExtResource( 2 )]
+
+position = Vector2( 1221.54, 513.434 )
+scale = Vector2( 0.0682633, 0.11853 )
+
+[node name="Ground39" parent="Ground" index="22" instance=ExtResource( 2 )]
+
+position = Vector2( 1224.88, 507.794 )
+scale = Vector2( 0.0555244, 0.0635025 )
+
+[node name="Ground36" parent="Ground" index="23" instance=ExtResource( 2 )]
+
+position = Vector2( 1217.96, 556.231 )
+scale = Vector2( 0.197641, 1.1448 )
+
+[node name="Ground28" parent="Ground" index="24" instance=ExtResource( 2 )]
+
+position = Vector2( 919.999, 663.848 )
+scale = Vector2( 0.0802928, 1.07636 )
+
+[node name="Ground21" parent="Ground" index="25" instance=ExtResource( 2 )]
+
+position = Vector2( 630.499, 736.287 )
+scale = Vector2( 0.118945, 0.118146 )
+
+[node name="Ground22" parent="Ground" index="26" instance=ExtResource( 2 )]
+
+position = Vector2( 632.396, 730.435 )
+scale = Vector2( 0.0612075, 0.0588847 )
+
+[node name="Ground17" parent="Ground" index="27" instance=ExtResource( 2 )]
+
+position = Vector2( 488.853, 740.122 )
+scale = Vector2( 0.17913, 0.117229 )
+
+[node name="Ground18" parent="Ground" index="28" instance=ExtResource( 2 )]
+
+position = Vector2( 486.764, 734.282 )
+scale = Vector2( 0.121848, 0.0546183 )
+
+[node name="Ground19" parent="Ground" index="29" instance=ExtResource( 2 )]
+
+position = Vector2( 484.931, 730.446 )
+scale = Vector2( 0.0565731, 0.0546183 )
+
+[node name="Ground13" parent="Ground" index="30" instance=ExtResource( 2 )]
+
+position = Vector2( 8.31054, 681.716 )
+scale = Vector2( 0.219778, 0.172521 )
+
+[node name="Ground14" parent="Ground" index="31" instance=ExtResource( 2 )]
+
+position = Vector2( 6.51191, 660.871 )
+scale = Vector2( 0.155412, 0.482716 )
+
+[node name="Ground15" parent="Ground" index="32" instance=ExtResource( 2 )]
+
+position = Vector2( 4.19744, 644.15 )
+scale = Vector2( 0.106702, 0.0664669 )
+
+[node name="Ground5" parent="Ground" index="33" instance=ExtResource( 2 )]
+
+position = Vector2( 172.86, 412.955 )
+scale = Vector2( 5.53562, 0.845153 )
+
+[node name="Ground7" parent="Ground" index="34" instance=ExtResource( 2 )]
+
+position = Vector2( 1320, 140 )
+scale = Vector2( 4.375, 1.89014 )
+
+[node name="Ground2" parent="Ground" index="35" instance=ExtResource( 2 )]
+
+position = Vector2( 776.66, 757.079 )
+scale = Vector2( 4.62012, 1.03684 )
+
+[node name="Ground3" parent="Ground" index="36" instance=ExtResource( 2 )]
+
+position = Vector2( 1071.74, 667.378 )
+scale = Vector2( 4.52017, 1.8141 )
+
+[node name="Ground4" parent="Ground" index="37" instance=ExtResource( 2 )]
+
+position = Vector2( 1367.32, 555.768 )
+scale = Vector2( 4.56284, 1.74431 )
+
+[node name="Ground8" parent="Ground" index="38" instance=ExtResource( 2 )]
+
+position = Vector2( 1533.18, 334.418 )
+scale = Vector2( 0.838034, 5.48692 )
+
+[node name="Spikes" type="Node" parent="." index="2"]
+
+editor/display_folded = true
+
+[node name="Spikes" parent="Spikes" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 557.839, 860.213 )
+scale = Vector2( 2.17826, 1.23789 )
+
+[node name="Spikes2" parent="Spikes" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 591.008, 789.798 )
+scale = Vector2( 0.0497483, 1.00421 )
+
+[node name="Spikes3" parent="Spikes" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 571.958, 793.462 )
+scale = Vector2( 0.0497483, 0.889728 )
+
+[node name="Porta" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 1420, 413 )
+scale = Vector2( 2.75, 2.75 )
+
+[node name="Bau" parent="." index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 1060.38, 581.611 )
+
+[node name="Player" parent="." index="5" groups=[
+"player",
+] instance=ExtResource( 6 )]
+
+position = Vector2( 178.465, 607.554 )
+scale = Vector2( 2.2676, 2.2676 )
+_sections_unfolded = [ "Collision", "Transform", "collision" ]
+
+[node name="HUD" parent="." index="6" instance=ExtResource( 7 )]
+
+
