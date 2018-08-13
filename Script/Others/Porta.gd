@@ -1,13 +1,10 @@
 extends Node2D
 
 var abrir = false
+var playerscript = load("res://Scenes/Player/Player.tscn")
+var player = playerscript.instance()
 
-var keys = 0
-
-export (PackedScene) var scene
-
-func _ready():
-	scene = scene.instance()
+var keys = player.keys
 
 func _physics_process(delta):
 	if Input.is_action_pressed("ui_enter"):

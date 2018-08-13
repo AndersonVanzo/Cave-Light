@@ -23,7 +23,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0, 0, 0 ) ]
 }
 
-[node name="SplashScreen" type="Control" index="0"]
+[node name="SplashScreen" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -56,15 +56,15 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="IF logo" type="TextureRect" parent="." index="1"]
 
-modulate = Color( 0, 0, 0, 0 )
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 370.0
-margin_top = 70.0
-margin_right = 710.0
-margin_bottom = 430.0
+margin_left = 310.0
+margin_top = 40.0
+margin_right = 716.0
+margin_bottom = 470.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1

@@ -4,12 +4,24 @@ const UP = Vector2(0, -1)
 const GRAVITY = 20
 const SPEED = 250
 const JUMP_HEIGHT = -600
-export var life_max = 10
-export var life = 10
+var life_max = 10
+var life = 10
 var lifebar
 var motion = Vector2()
 var abrirBau = false
 var abrirPorta = false
+var keys = 0
+
+func save():
+	var save_dict = {
+		"filename" : get_filename(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : get_node(".").position.x,
+		"pos_y" : get_node(".").position.y,
+		"current_health" : get_node(".").life,
+		"max_health" : get_node(".").life_max
+	}
+	return save_dict
 
 func _ready():
 	lifebar = get_tree().get_nodes_in_group("hp")[0]
